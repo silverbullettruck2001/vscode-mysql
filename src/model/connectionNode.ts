@@ -20,7 +20,7 @@ export class ConnectionNode implements INode {
 
     public getTreeItem(): vscode.TreeItem {
         return {
-            label: this.host,
+            label: this.user + "@" + this.host,
             collapsibleState: vscode.TreeItemCollapsibleState.Collapsed,
             contextValue: "connection",
             iconPath: path.join(__filename, "..", "..", "..", "resources", "server.png"),

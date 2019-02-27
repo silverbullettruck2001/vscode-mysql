@@ -1,3 +1,6 @@
+## 0.3.2 (2019-02-27)
+* Change database label to 'user@host'
+
 ## 0.3.1 (2018-12-06)
 * Add support for 'DELIMITER' operator
 
