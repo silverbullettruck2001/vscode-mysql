@@ -1,3 +1,6 @@
+## 0.3.1 (2018-12-06)
+* Add support for 'DELIMITER' operator
+
 ## 0.3.0 (2018-03-12)
 * Show query result as HTML table
 

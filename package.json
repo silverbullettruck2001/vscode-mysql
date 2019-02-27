@@ -2,14 +2,14 @@
     "name": "vscode-mysql",
     "displayName": "MySQL",
     "description": "MySQL management tool",
-    "version": "0.3.0",
-    "publisher": "formulahendry",
+    "version": "0.3.1",
+    "publisher": "poreklo",
     "icon": "logo.png",
     "engines": {
         "vscode": "^1.18.0"
     },
     "categories": [
-        "Languages",
+        "Programming Languages",
         "Azure"
     ],
     "keywords": [
@@ -20,13 +20,13 @@
         "RDBMS"
     ],
     "bugs": {
-        "url": "https://github.com/formulahendry/vscode-mysql/issues",
-        "email": "formulahendry@gmail.com"
+        "url": "https://github.com/poreklo/vscode-mysql/issues",
+        "email": "yury@smsio.ru"
     },
-    "homepage": "https://github.com/formulahendry/vscode-mysql/blob/master/README.md",
+    "homepage": "https://github.com/poreklo/vscode-mysql/blob/master/README.md",
     "repository": {
         "type": "git",
-        "url": "https://github.com/formulahendry/vscode-mysql.git"
+        "url": "https://github.com/poreklo/vscode-mysql.git"
     },
     "activationEvents": [
         "onView:mysql",
@@ -162,7 +162,7 @@
         "@types/node": "^7.0.43",
         "tslint": "^5.8.0",
         "typescript": "^2.6.1",
-        "vscode": "^1.1.6"
+        "vscode": "^1.1.30"
     },
     "dependencies": {
         "applicationinsights": "^1.0.0",

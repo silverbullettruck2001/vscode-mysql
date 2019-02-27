@@ -1,8 +1,10 @@
 # MySQL
 
-[![Marketplace Version](https://vsmarketplacebadge.apphb.com/version-short/formulahendry.vscode-mysql.svg)](https://marketplace.visualstudio.com/items?itemName=formulahendry.vscode-mysql) [![Installs](https://vsmarketplacebadge.apphb.com/installs-short/formulahendry.vscode-mysql.svg)](https://marketplace.visualstudio.com/items?itemName=formulahendry.vscode-mysql) [![Rating](https://vsmarketplacebadge.apphb.com/rating-short/formulahendry.vscode-mysql.svg)](https://marketplace.visualstudio.com/items?itemName=formulahendry.vscode-mysql) [![Build Status](https://travis-ci.org/formulahendry/vscode-mysql.svg?branch=master)](https://travis-ci.org/formulahendry/vscode-mysql)
+[![Marketplace Version](https://vsmarketplacebadge.apphb.com/version-short/poreklo.vscode-mysql.svg)](https://marketplace.visualstudio.com/items?itemName=poreklo.vscode-mysql) [![Installs](https://vsmarketplacebadge.apphb.com/installs-short/poreklo.vscode-mysql.svg)](https://marketplace.visualstudio.com/items?itemName=poreklo.vscode-mysql) [![Rating](https://vsmarketplacebadge.apphb.com/rating-short/poreklo.vscode-mysql.svg)](https://marketplace.visualstudio.com/items?itemName=poreklo.vscode-mysql) [![Build Status](https://travis-ci.org/poreklo/vscode-mysql.svg?branch=master)](https://travis-ci.org/poreklo/vscode-mysql)
 
-MySQL management tool
+MySQL management tool (With `DELIMITER` operator support)
+
+Note: This tool is copy from [MySQL (Jun Han)](https://marketplace.visualstudio.com/items?itemName=formulahendry.vscode-mysql). Just added support for scripts with the `DELIMITER` operator.
 
 ## Features
 
@@ -39,6 +41,7 @@ MySQL management tool
 ## Telemetry data
 
 By default, anonymous telemetry data collection is turned on to understand user behavior to improve this extension. To disable it, update the settings.json as below:
+
 ```json
 {
     "vscode-mysql.enableTelemetry": false
@@ -51,4 +54,4 @@ See Change Log [here](CHANGELOG.md)
 
 ## Issues
 
-Currently, the extension is in the very initial phase. If you find any bug or have any suggestion/feature request, please submit the [issues](https://github.com/formulahendry/vscode-mysql/issues) to the GitHub Repo.
+Currently, the extension is in the very initial phase. If you find any bug or have any suggestion/feature request, please submit the [issues](https://github.com/poreklo/vscode-mysql/issues) to the GitHub Repo.
