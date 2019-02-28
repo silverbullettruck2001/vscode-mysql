@@ -35,7 +35,8 @@ export class Utility {
         let curPos = 0;
         let delim;
         // remove comments
-        sql = sql.replace(/--\s.*?[\r\n$]+/g, "");
+        sql = sql.replace(/(--\s.*?)([\r\n$]+)/g, "$2");
+        sql += "\n";  // dumb bug fix, when query ends with "DELIMITER <delim><eof>"
         // search DELIMITER(s)
         const m = sql.match(/DELIMITER\s+(.*?)[\s\r\n]+/ig);
         // replace delimiters with ';'
