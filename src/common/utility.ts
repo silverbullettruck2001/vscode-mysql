@@ -4,6 +4,7 @@ import * as fs from "fs";
 import * as mysql from "mysql";
 import * as vscode from "vscode";
 import { IConnection } from "../model/connection";
+import { SqlResultDocumentContentProvider } from "../sqlResultDocumentContentProvider";
 import { AppInsightsClient } from "./appInsightsClient";
 import { Global } from "./global";
 import { OutputChannel } from "./outputChannel";
@@ -138,13 +139,15 @@ export class Utility {
     }
 
     private static showQueryResult(data, title: string) {
-        vscode.commands.executeCommand(
-            "vscode.previewHtml",
-            Utility.getPreviewUri(JSON.stringify(data)),
-            vscode.ViewColumn.Two,
-            title).then(() => { }, (e) => {
-                OutputChannel.appendLine(e);
-            });
+        const provider = new SqlResultDocumentContentProvider();
+        const panel = vscode.window.createWebviewPanel("mysql.result", title, vscode.ViewColumn.Two, {});
+        provider.provideTextDocumentContent(Utility.getPreviewUri(JSON.stringify(data))).then(
+            (html) => {
+                panel.webview.html = html;
+            }, (err) => {
+                OutputChannel.appendLine(err);
+            },
+        );
     }
 
     private static async hasActiveConnection(): Promise<boolean> {

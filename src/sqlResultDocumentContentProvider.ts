@@ -2,12 +2,6 @@ import { ExtensionContext, TextDocumentContentProvider, Uri } from "vscode";
 
 export class SqlResultDocumentContentProvider implements TextDocumentContentProvider {
 
-    private _context: ExtensionContext;
-
-    constructor(context: ExtensionContext) {
-        this._context = context;
-    }
-
     public provideTextDocumentContent(uri: Uri): Thenable<string> {
 
         const self = this;

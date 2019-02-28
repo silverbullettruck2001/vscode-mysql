@@ -12,7 +12,7 @@ import { SqlResultDocumentContentProvider } from "./sqlResultDocumentContentProv
 export function activate(context: vscode.ExtensionContext) {
     AppInsightsClient.sendEvent("loadExtension");
 
-    const provider = new SqlResultDocumentContentProvider(context);
+    const provider = new SqlResultDocumentContentProvider();
     context.subscriptions.push(vscode.workspace.registerTextDocumentContentProvider("sqlresult", provider));
 
     const mysqlTreeDataProvider = new MySQLTreeDataProvider(context);

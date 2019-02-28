@@ -6,7 +6,7 @@
     "publisher": "poreklo",
     "icon": "logo.png",
     "engines": {
-        "vscode": "^1.18.0"
+        "vscode": "^1.28.0"
     },
     "categories": [
         "Programming Languages",
