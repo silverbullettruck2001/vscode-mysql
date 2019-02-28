@@ -85,7 +85,9 @@ export class Utility {
         connectionOptions.multipleStatements = true;
         const connection = Utility.createConnection(connectionOptions);
 
-        sql = this.removeDelimiterInstructions(sql);
+        if (this.getConfiguration().get<boolean>("enableDelimiterOperator")) {
+            sql = this.removeDelimiterInstructions(sql);
+        }
 
         OutputChannel.appendLine("[Start] Executing MySQL query...");
         connection.query(sql, (err, rows) => {
@@ -140,8 +142,9 @@ export class Utility {
 
     private static showQueryResult(data, title: string) {
         const provider = new SqlResultDocumentContentProvider();
-        const panel = vscode.window.createWebviewPanel("mysql.result", title, vscode.ViewColumn.Two, {});
-        provider.provideTextDocumentContent(Utility.getPreviewUri(JSON.stringify(data))).then(
+        const panel = vscode.window.createWebviewPanel("html", title,
+            vscode.ViewColumn.Two, { retainContextWhenHidden: this.getConfiguration().get<boolean>("keepResultWindow") });
+        provider.provideTextDocumentContent(this.getPreviewUri(JSON.stringify(data))).then(
             (html) => {
                 panel.webview.html = html;
             }, (err) => {

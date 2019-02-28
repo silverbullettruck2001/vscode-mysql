@@ -152,6 +152,16 @@
                     "type": "integer",
                     "default": 500,
                     "description": "The maximum table count shown in the tree view"
+                },
+                "vscode-mysql.keepResultWindow": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "When true, keep rendered window contents"
+                },
+                "vscode-mysql.enableDelimiterOperator": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Enable support for DELIMITER operator."
                 }
             }
         }
