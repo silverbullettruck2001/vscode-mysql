@@ -39,6 +39,10 @@ export function activate(context: vscode.ExtensionContext) {
         databaseOrConnectionNode.newQuery();
     }));
 
+    context.subscriptions.push(vscode.commands.registerCommand("mysql.useThisDB", (databaseOrConnectionNode: DatabaseNode) => {
+        databaseOrConnectionNode.newQuery(false);
+    }));
+
     context.subscriptions.push(vscode.commands.registerCommand("mysql.selectTop1000", (tableNode: TableNode) => {
         tableNode.selectTop1000();
     }));

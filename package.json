@@ -71,6 +71,11 @@
                 "category": "MySQL"
             },
             {
+                "command": "mysql.useThisDB",
+                "title": "Use this DB",
+                "category": "MySQL"
+            },
+            {
                 "command": "mysql.selectTop1000",
                 "title": "Select Top 1000",
                 "category": "MySQL"
@@ -109,6 +114,11 @@
                 },
                 {
                     "command": "mysql.newQuery",
+                    "when": "view == mysql && viewItem == database",
+                    "group": "mysql@0"
+                },
+                {
+                    "command": "mysql.useThisDB",
                     "when": "view == mysql && viewItem == database",
                     "group": "mysql@0"
                 },
