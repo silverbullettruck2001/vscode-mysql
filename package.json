@@ -76,13 +76,11 @@
                 "category": "MySQL"
             }
         ],
-        "keybindings": [
-            {
-                "command": "mysql.runQuery",
-                "key": "ctrl+alt+e",
-                "when": "editorLangId == sql"
-            }
-        ],
+        "keybindings": [{
+            "command": "mysql.runQuery",
+            "key": "ctrl+alt+e",
+            "when": "editorLangId == sql"
+        }],
         "menus": {
             "editor/context": [{
                 "command": "mysql.runQuery",

@@ -9,8 +9,9 @@ import { InfoNode } from "./infoNode";
 import { INode } from "./INode";
 
 export class ColumnNode implements INode {
-    constructor(private readonly host: string, private readonly user: string, private readonly password: string,
-                private readonly port: string, private readonly database: string, private readonly column: any ) {
+    constructor(
+        private readonly host: string, private readonly user: string, private readonly password: string,
+        private readonly port: string, private readonly database: string, private readonly column: any) {
     }
 
     public getTreeItem(): vscode.TreeItem {

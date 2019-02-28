@@ -13,9 +13,10 @@ import { InfoNode } from "./infoNode";
 import { INode } from "./INode";
 
 export class ConnectionNode implements INode {
-    constructor(private readonly id: string, private readonly host: string, private readonly user: string,
-                private readonly password: string, private readonly port: string,
-                private readonly certPath: string) {
+    constructor(
+        private readonly id: string, private readonly host: string, private readonly user: string,
+        private readonly password: string, private readonly port: string,
+        private readonly certPath: string) {
     }
 
     public getTreeItem(): vscode.TreeItem {

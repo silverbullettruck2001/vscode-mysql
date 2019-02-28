@@ -10,9 +10,10 @@ import { InfoNode } from "./infoNode";
 import { INode } from "./INode";
 
 export class TableNode implements INode {
-    constructor(private readonly host: string, private readonly user: string, private readonly password: string,
-                private readonly port: string, private readonly database: string, private readonly table: string,
-                private readonly certPath: string) {
+    constructor(
+        private readonly host: string, private readonly user: string, private readonly password: string,
+        private readonly port: string, private readonly database: string, private readonly table: string,
+        private readonly certPath: string) {
     }
 
     public getTreeItem(): vscode.TreeItem {
@@ -37,7 +38,7 @@ export class TableNode implements INode {
         return Utility.queryPromise<any[]>(connection, `SELECT * FROM information_schema.columns WHERE table_schema = '${this.database}' AND table_name = '${this.table}';`)
             .then((columns) => {
                 return columns.map<ColumnNode>((column) => {
-                    return new ColumnNode(this.host, this.user, this.password, this.port, this.database, column );
+                    return new ColumnNode(this.host, this.user, this.password, this.port, this.database, column);
                 });
             })
             .catch((err) => {
