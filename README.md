@@ -4,7 +4,7 @@
 
 MySQL management tool (With `DELIMITER` operator support)
 
-Note: This tool is copy from [MySQL (Jun Han)](https://marketplace.visualstudio.com/items?itemName=formulahendry.vscode-mysql). Just added support for scripts with the `DELIMITER` operator.
+Note: This tool forked from [MySQL (Jun Han)](https://marketplace.visualstudio.com/items?itemName=formulahendry.vscode-mysql).
 
 ## Features
 
