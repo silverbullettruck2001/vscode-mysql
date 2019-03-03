@@ -5,7 +5,6 @@ import * as mysql from "mysql";
 import * as vscode from "vscode";
 import { IConnection } from "../model/connection";
 import { SqlResultDocumentContentProvider } from "../sqlResultDocumentContentProvider";
-import { AppInsightsClient } from "./appInsightsClient";
 import { Global } from "./global";
 import { OutputChannel } from "./outputChannel";
 
@@ -57,17 +56,14 @@ export class Utility {
     }
 
     public static async runQuery(sql?: string, connectionOptions?: IConnection) {
-        AppInsightsClient.sendEvent("runQuery.start");
         if (!sql && !vscode.window.activeTextEditor) {
             vscode.window.showWarningMessage("No SQL file selected");
-            AppInsightsClient.sendEvent("runQuery.noFile");
             return;
         }
         if (!connectionOptions && !Global.activeConnection) {
             const hasActiveConnection = await Utility.hasActiveConnection();
             if (!hasActiveConnection) {
                 vscode.window.showWarningMessage("No MySQL Server or Database selected");
-                AppInsightsClient.sendEvent("runQuery.noMySQL");
                 return;
             }
         }
@@ -111,9 +107,6 @@ export class Utility {
 
             if (err) {
                 OutputChannel.appendLine(err);
-                AppInsightsClient.sendEvent("runQuery.end", { Result: "Fail", ErrorMessage: err });
-            } else {
-                AppInsightsClient.sendEvent("runQuery.end", { Result: "Success" });
             }
             OutputChannel.appendLine("[Done] Finished MySQL query.");
         });
