@@ -1,9 +1,12 @@
+.nyc_output
 .vscode/**
 .vscode-test/**
+.gitignore
+coverage
 out/test/**
 out/**/*.map
 src/**
 images/**
-.gitignore
 tsconfig.json
+tslint.json
 vsc-extension-quickstart.md

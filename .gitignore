@@ -1,4 +1,6 @@
-out
-node_modules
 .vscode-test/
+.nyc_output
+out
+coverage
+node_modules
 *.vsix
