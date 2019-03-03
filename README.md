@@ -38,16 +38,6 @@ Note: This tool forked from [MySQL (Jun Han)](https://marketplace.visualstudio.c
 
 * `vscode-mysql.maxTableCount`: The maximum table count shown in the tree view. (Default is **500**)
 
-## Telemetry data
-
-By default, anonymous telemetry data collection is turned on to understand user behavior to improve this extension. To disable it, update the settings.json as below:
-
-```json
-{
-    "vscode-mysql.enableTelemetry": false
-}
-```
-
 ## Change Log
 
 See Change Log [here](CHANGELOG.md)
