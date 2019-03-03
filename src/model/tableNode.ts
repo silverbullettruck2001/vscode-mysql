@@ -1,7 +1,6 @@
 import * as mysql from "mysql";
 import * as path from "path";
 import * as vscode from "vscode";
-import { AppInsightsClient } from "../common/appInsightsClient";
 import { Global } from "../common/global";
 import { OutputChannel } from "../common/outputChannel";
 import { Utility } from "../common/utility";
@@ -47,7 +46,6 @@ export class TableNode implements INode {
     }
 
     public async selectTop1000() {
-        AppInsightsClient.sendEvent("selectTop1000");
         const sql = `SELECT * FROM ${this.database}.${this.table} LIMIT 1000;`;
         Utility.createSQLTextDocument(sql);
 

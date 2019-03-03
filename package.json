@@ -153,11 +153,6 @@
             "type": "object",
             "title": "MySQL",
             "properties": {
-                "vscode-mysql.enableTelemetry": {
-                    "type": "boolean",
-                    "default": true,
-                    "description": "Whether to enable anonymous usage collection."
-                },
                 "vscode-mysql.maxTableCount": {
                     "type": "integer",
                     "default": 500,
@@ -193,7 +188,6 @@
         "vscode": "^1.1.30"
     },
     "dependencies": {
-        "applicationinsights": "^1.0.0",
         "asciitable": "0.0.7",
         "mysql": "^2.15.0",
         "uuid": "^3.1.0"
