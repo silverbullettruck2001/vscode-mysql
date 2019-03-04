@@ -28,30 +28,27 @@ export class Utility {
         });
     }
 
-    // Remove MySQL instructions: DELIMITER ...
-    public static removeDelimiterInstructions(sql = "") {
-        let result = "";
-        let curPos = 0;
-        let delim;
-        // remove comments
-        sql = sql.replace(/(--\s.*?)([\r\n$]+)/g, "$2");
-        sql += "\n";  // dumb bug fix, when query ends with "DELIMITER <delim><eof>"
-        // search DELIMITER(s)
-        const m = sql.match(/DELIMITER\s+(.*?)[\s\r\n]+/ig);
-        // replace delimiters with ';'
-        if (m !== null) {
-            m.forEach((element) => {
-                const pos = sql.indexOf(element);
-                if (delim === ";" || delim === "undefined") {
-                    result += sql.substr(curPos, pos - curPos);
-                } else {
-                    result += sql.substr(curPos, pos - curPos).replace(delim, ";");
-                }
-                delim = (element.match(/DELIMITER\s+(.+?)[\s\r\n]+/i)[1]);
-                curPos = pos + element.length;
-            });
+    // Remove MySQL instructions: DELIMITER
+    public static removeDelimiterInstructions(sql: string) {
+        if (!sql.search(/delimiter/i)) {
+            return sql;
         }
-        result += sql.substr(curPos);
+        const rc = new RegExp(/(?<!--\s+.*)(delimiter\s+(\S+))/gi);
+        let currentDelimiter = ";";
+        let nextPosition = 0;
+        let result = "";
+        let a;
+
+        while (Boolean(a = rc.exec(sql))) {
+            result += (currentDelimiter === ";")
+                ? sql.slice(nextPosition, a.index)
+                : sql.slice(nextPosition, a.index).replace(currentDelimiter, ";");
+            nextPosition = a.index + a[1].length;
+            currentDelimiter = a[2];
+        }
+        result += (currentDelimiter === ";")
+            ? sql.slice(nextPosition)
+            : sql.slice(nextPosition).replace(currentDelimiter, ";");
         return result;
     }
 
