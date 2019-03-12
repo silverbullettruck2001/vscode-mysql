@@ -122,6 +122,7 @@ export class Utility {
                 ca: fs.readFileSync(connectionOptions.certPath),
             };
         }
+        newConnectionOptions.dateStrings = true;
         return mysql.createConnection(newConnectionOptions);
     }
 
