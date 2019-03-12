@@ -9,8 +9,7 @@
         "vscode": "^1.28.0"
     },
     "categories": [
-        "Programming Languages",
-        "Azure"
+        "Programming Languages"
     ],
     "keywords": [
         "SQL",

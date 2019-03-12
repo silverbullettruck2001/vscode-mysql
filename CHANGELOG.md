@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.3.4 (2019-03-12)
+
+* change date display format
+* telemetry removed
+
 ## 0.3.3 (2019-03-01)
 
 * Update vscode engine to 1.28

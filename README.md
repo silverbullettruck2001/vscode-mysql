@@ -1,10 +1,15 @@
-# MySQL
+# [MySQL management tool for VSCode](https://marketplace.visualstudio.com/items?itemName=poreklo.vscode-mysql)
 
 [![Marketplace Version](https://vsmarketplacebadge.apphb.com/version-short/poreklo.vscode-mysql.svg)](https://marketplace.visualstudio.com/items?itemName=poreklo.vscode-mysql) [![Installs](https://vsmarketplacebadge.apphb.com/installs-short/poreklo.vscode-mysql.svg)](https://marketplace.visualstudio.com/items?itemName=poreklo.vscode-mysql) [![Rating](https://vsmarketplacebadge.apphb.com/rating-short/poreklo.vscode-mysql.svg)](https://marketplace.visualstudio.com/items?itemName=poreklo.vscode-mysql) [![Build Status](https://travis-ci.org/poreklo/vscode-mysql.svg?branch=master)](https://travis-ci.org/poreklo/vscode-mysql)
 
-MySQL management tool (With `DELIMITER` operator support)
-
-Note: This tool forked from [MySQL (Jun Han)](https://marketplace.visualstudio.com/items?itemName=formulahendry.vscode-mysql).
+> Note: This tool forked from [MySQL (Jun Han)](https://marketplace.visualstudio.com/items?itemName=formulahendry.vscode-mysql).
+>
+> major changes:
+>
+> * add support for `DELIMITER` operator (can be switched by parameter `enableDelimiterOperator`)
+> * update to support future vscode versions
+>
+> minor changes you can see in the [changelog](/CHANGELOG.md)
 
 ## Features
 
@@ -37,10 +42,12 @@ Note: This tool forked from [MySQL (Jun Han)](https://marketplace.visualstudio.c
 ## Settings
 
 * `vscode-mysql.maxTableCount`: The maximum table count shown in the tree view. (Default is **500**)
+* `vscode-mysql.enableDelimiterOperator`: Enabling or disabling support for `DELIMITER` operator. If you execute large MySQL scripts without delimiter operator you may want to disable this function to improve performance. (Default: **True**)
+* `vscode-mysql.keepResultWindow`: Keeps the result when switching tabs. Enabling this option increases memory usage. (Default: **False**)
 
 ## Change Log
 
-See Change Log [here](CHANGELOG.md)
+See Change Log [here](/CHANGELOG.md)
 
 ## Issues
 
