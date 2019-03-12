@@ -42,13 +42,13 @@ export class Utility {
         while (Boolean(a = rc.exec(sql))) {
             result += (currentDelimiter === ";")
                 ? sql.slice(nextPosition, a.index)
-                : sql.slice(nextPosition, a.index).replace(currentDelimiter, ";");
+                : sql.slice(nextPosition, a.index).replace(new RegExp(currentDelimiter, "g"), ";");
             nextPosition = a.index + a[1].length;
             currentDelimiter = a[2];
         }
         result += (currentDelimiter === ";")
             ? sql.slice(nextPosition)
-            : sql.slice(nextPosition).replace(currentDelimiter, ";");
+            : sql.slice(nextPosition).replace(new RegExp(currentDelimiter, "g"), ";");
         return result;
     }
 
