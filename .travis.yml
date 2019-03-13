@@ -7,10 +7,6 @@ os:
   - linux
 
 before_install:
-  - if [ -n "${TRAVIS_TAG}" ]; then
-      tar czf ../${TRAVIS_TAG}.tar.gz .;
-      zip -r ../${TRAVIS_TAG}.zip .;
-    fi
   - if [ $TRAVIS_OS_NAME == "linux" ]; then
       export CXX="g++-4.9" CC="gcc-4.9" DISPLAY=:99.0;
       sh -e /etc/init.d/xvfb start;
@@ -35,8 +31,6 @@ deploy:
   file_glob: true
   file: 
     - "*.vsix"
-    - "../*.zip"
-    - "../*.gz"
   skip_cleanup: true
   draft: true
   name: "${TRAVIS_TAG}"
