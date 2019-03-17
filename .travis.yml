@@ -1,39 +1,43 @@
 sudo: false
 language: node_js
 node_js:
-  - "node"
+- node
 os:
-  - osx
-  - linux
+- osx
+- linux
 
 before_install:
-  - if [ $TRAVIS_OS_NAME == "linux" ]; then
-      export CXX="g++-4.9" CC="gcc-4.9" DISPLAY=:99.0;
-      sh -e /etc/init.d/xvfb start;
-      sleep 3;
-    fi
-
+- if [ $TRAVIS_OS_NAME == "linux" ];then
+    export CXX="g++-4.9" CC="gcc-4.9" DISPLAY=:99.0;
+    sh -e /etc/init.d/xvfb start;
+    sleep 3; 
+  fi
+  
 install:
-  - npm install
-  - npm run vscode:prepublish
+- npm install
+- npm run vscode:prepublish
 
 script:
-  - npm run tslint
-  - npm test --silent
+- npm run tslint
+- npm test --silent
 
 before_deploy:
-  - npm install -g vsce
-  - vsce package
+- npm install -g vsce
+- vsce package
 
 deploy:
   provider: releases
   api_key: "${GITHUB_DEPLOY_KEY}"
   file_glob: true
-  file: 
-    - "*.vsix"
+  file:
+  - "*.vsix"
   skip_cleanup: true
   draft: true
   name: "${TRAVIS_TAG}"
   on:
     tags: true
     condition: $TRAVIS_OS_NAME == "linux"
+
+notifications:
+  slack:
+    secure: h14b5cXmPHRUUaoCgZeZcSsQePPbKvcjYQohuXHztlXE34mbstNS2vNVoSwQcvzRDjYrYrC2qctYN7nKRowM4SMurt0RAS9I3WHQv3Z0SkhHEvStUDnRI646pjAqMka4f3gkqM1H4TtoZeko9U0qLKWcAuOYSE866vTfiDqxNTdKEAgESGmuzYnltsLyPRdSCvHjMejiY9iBYgcDD2OSQj+ffhAjVIRy5PIvrjH5a5Z+RUZaDqwWZKheOSiFj++br8xI7oT0e1dIuPGS+xC8rbjK5/aFGzLbKglP27supEXjDB3UdBWG0AkmpSpuQbIslUgyCS2Iwk2ZDnyviuU4S7pNnperbGUcwmIEKPbNB9RgOUpZ6kukPv37JCAqC/U6i30nTaeyJEnL44kE5pG9d8j3opV5wGaDazmv5js5MEhfUzmgQ2iWHkQBa9y7b+zR6pCmNeXtXRUdbSnl1WV9LraOton+ONY3uZwIl3G5pOlXgPAserHsss9aY/dnD/pejW18UzeT60Qr28K8gA3EFZcSqkZ3lqU+7R7Fr1LJDg4J7zni4BN5aYwJAGFqE3XAMVOugR2x21z2RklyQ3OcRawKyLWkt6zRaX2XkIra7lfMw/FJTDHqhfvsM2K5g2dof9ZN6mQRqbYM+DHXCSXZLqhB2SXwgGQIl7t2OCSNF4c=
