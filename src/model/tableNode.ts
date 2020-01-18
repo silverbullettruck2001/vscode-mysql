@@ -46,7 +46,7 @@ export class TableNode implements INode {
     }
 
     public async selectTop1000() {
-        const sql = `SELECT * FROM ${this.database}.${this.table} LIMIT 1000;`;
+        const sql = `SELECT * FROM \`${this.database}\`.\`${this.table}\` LIMIT 1000;`;
         Utility.createSQLTextDocument(sql);
 
         const connection = {
