@@ -2,14 +2,15 @@
     "name": "vscode-mysql",
     "displayName": "MySQL",
     "description": "MySQL management tool",
-    "version": "0.3.4",
-    "publisher": "poreklo",
+    "version": "0.4.0",
+    "publisher": "formulahendry",
     "icon": "logo.png",
     "engines": {
-        "vscode": "^1.28.0"
+        "vscode": "^1.30.0"
     },
     "categories": [
-        "Programming Languages"
+        "Programming Languages",
+        "Azure"
     ],
     "keywords": [
         "SQL",
@@ -156,11 +157,6 @@
                     "type": "integer",
                     "default": 500,
                     "description": "The maximum table count shown in the tree view"
-                },
-                "vscode-mysql.keepResultWindow": {
-                    "type": "boolean",
-                    "default": false,
-                    "description": "When true, keep rendered window contents"
                 },
                 "vscode-mysql.enableDelimiterOperator": {
                     "type": "boolean",

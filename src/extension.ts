@@ -6,7 +6,6 @@ import { DatabaseNode } from "./model/databaseNode";
 import { INode } from "./model/INode";
 import { TableNode } from "./model/tableNode";
 import { MySQLTreeDataProvider } from "./mysqlTreeDataProvider";
-import { SqlResultDocumentContentProvider } from "./sqlResultDocumentContentProvider";
 
 export function activate(context: vscode.ExtensionContext) {
     const provider = new SqlResultDocumentContentProvider();
