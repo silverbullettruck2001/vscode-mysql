@@ -42,8 +42,16 @@
 ## Settings
 
 * `vscode-mysql.maxTableCount`: The maximum table count shown in the tree view. (Default is **500**)
-* `vscode-mysql.enableDelimiterOperator`: Enabling or disabling support for `DELIMITER` operator. If you execute large MySQL scripts without delimiter operator you may want to disable this function to improve performance. (Default: **True**)
-* `vscode-mysql.keepResultWindow`: Keeps the result when switching tabs. Enabling this option increases memory usage. (Default: **False**)
+* `vscode-mysql.enableDelimiterOperator`: Enable support for DELIMITER operator. (Default is **true**)
+
+## Telemetry data
+
+By default, anonymous telemetry data collection is turned on to understand user behavior to improve this extension. To disable it, update the settings.json as below:
+```json
+{
+    "vscode-mysql.enableTelemetry": false
+}
+```
 
 ## Change Log
 

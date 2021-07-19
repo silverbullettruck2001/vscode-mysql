@@ -1,25 +1,9 @@
-# Changelog
+## 0.4.1 (2021-07-17)
+* [#170](https://github.com/formulahendry/vscode-mysql/pull/170): Add support for DELIMITER operator
 
-## 0.3.4 (2019-03-12)
-
-* change date display format
-* telemetry removed
-
-## 0.3.3 (2019-03-01)
-
-* Update vscode engine to 1.28
-* Add configuration paramaters `keepResultWindow` and `enableDelimiterOperator`
-* Add context menu `'Use this DB'` to switch the database without opening a new query tab
-* Fix vscode freezes by large query result
-
-## 0.3.2 (2019-02-27)
-
-* Change database label to `user@host`
-
-## 0.3.1 (2018-12-06)
-
-* Fork from <https://github.com/formulahendry/vscode-mysql>
-* Add support for `DELIMITER` operator
+## 0.4.0 (2018-04-03)
+* [#81](https://github.com/formulahendry/vscode-mysql/issues/81): Upgrade to VS Code's webview API
+* [#97](https://github.com/formulahendry/vscode-mysql/pull/97): Escape database and table names
 
 ## 0.3.0 (2018-03-12)
 
